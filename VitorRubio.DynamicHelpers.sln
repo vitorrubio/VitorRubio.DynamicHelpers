@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitorRubio.DynamicHelpers", "VitorRubio.DynamicHelpers\VitorRubio.DynamicHelpers.csproj", "{380A2138-723A-4601-9D6B-80FF7CB1B54D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VitorRubio.DynamicHelpersTest", "VitorRubio.DynamicHelpersTest\VitorRubio.DynamicHelpersTest.csproj", "{C157DA18-4E23-4F9D-B2E6-8EE57BACFB53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{380A2138-723A-4601-9D6B-80FF7CB1B54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{380A2138-723A-4601-9D6B-80FF7CB1B54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{380A2138-723A-4601-9D6B-80FF7CB1B54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{380A2138-723A-4601-9D6B-80FF7CB1B54D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C157DA18-4E23-4F9D-B2E6-8EE57BACFB53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C157DA18-4E23-4F9D-B2E6-8EE57BACFB53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C157DA18-4E23-4F9D-B2E6-8EE57BACFB53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C157DA18-4E23-4F9D-B2E6-8EE57BACFB53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3DB311C-E5EF-4269-8A09-593FD02D1CBF}
+	EndGlobalSection
+EndGlobal
