@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace VitorRubio.DynamicHelpersTest
 {
     [TestClass]
-    public class BaseElasticObjectTest
+    public class DynamicTests
     {
         [TestMethod]
         public void TestMethod1()

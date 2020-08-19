@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VitorRubio.DynamicHelpersTest
 {
-    class CasaDaMaeJoanaTest
+    public class CasaDaMaeJoanaTest
     {
     }
 }
