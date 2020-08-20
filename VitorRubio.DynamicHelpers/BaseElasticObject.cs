@@ -54,12 +54,14 @@ namespace VitorRubio.DynamicHelpers
 
         #region implementação e sobrecarga de DynamicObject
 
-        //
-        // Resumo:
-        //     Returns the enumeration of all dynamic member names.
-        //
-        // Devoluções:
-        //     A sequence that contains dynamic member names.
+        /// <summary>
+        ///  Resumo:
+        ///      Returns the enumeration of all dynamic member names.
+        /// 
+        ///  Devoluções:
+        ///      A sequence that contains dynamic member names.
+        /// </summary>
+        /// <returns></returns>
         public override IEnumerable<string> GetDynamicMemberNames()
         {
             var thisEnumerableKeys = this.AsEnumerable().Select(x => x.Key);
