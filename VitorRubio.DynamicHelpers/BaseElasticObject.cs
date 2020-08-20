@@ -30,25 +30,20 @@ namespace VitorRubio.DynamicHelpers
 
 
 
-        #region propriedades públicas
-
-        [JsonProperty]
-        public virtual int? Oid { get; set; }
-
-        #endregion
-
-
 
         #region métodos públicos
 
 
-
-
-        public virtual IEnumerable<KeyValuePair<string, object>> AsEnumerable()
+        public virtual Dictionary<string, object> ToDictionary() //ou seria melhor AsDictionary?
         {
-            var props = this.GetProperties().Select(x => new KeyValuePair<string, object>(x.Name, x.GetValue(this))).AsEnumerable();
-            var dicDinamico = _dictionary.AsEnumerable();
-            return props.Union(dicDinamico);
+            var props = this.GetProperties().Select(x => new { Key = x.Name, Value = x.GetValue(this) }).ToDictionary(k => k.Key, v => v.Value);
+
+            var result = props
+                .Concat(_dictionary)
+                .GroupBy(d => d.Key)
+                .ToDictionary(d => d.Key, d => d.First().Value);
+
+            return result;
         }
 
 
@@ -64,8 +59,8 @@ namespace VitorRubio.DynamicHelpers
         /// <returns></returns>
         public override IEnumerable<string> GetDynamicMemberNames()
         {
-            var thisEnumerableKeys = this.AsEnumerable().Select(x => x.Key);
-            return thisEnumerableKeys.Union(base.GetDynamicMemberNames());
+            var thisKeys = this.ToDictionary().Select(x => x.Key);
+            return thisKeys.Union(base.GetDynamicMemberNames());
         }
 
         //
@@ -510,9 +505,9 @@ namespace VitorRubio.DynamicHelpers
             return _dictionary.TryGetValue(key, out value);
         }
 
-        ICollection<string> IDictionary<string, object>.Keys => this.AsEnumerable().Select(x => x.Key).ToList();//_dictionary.Keys;
+        ICollection<string> IDictionary<string, object>.Keys => this.ToDictionary().Select(x => x.Key).ToList();
 
-        ICollection<object> IDictionary<string, object>.Values => this.AsEnumerable().Select(x => x.Value).ToList(); //_dictionary.Values;
+        ICollection<object> IDictionary<string, object>.Values => this.ToDictionary().Select(x => x.Value).ToList(); 
 
         #endregion
 
@@ -559,7 +554,7 @@ namespace VitorRubio.DynamicHelpers
 
         IEnumerator<KeyValuePair<string, object>> IEnumerable<KeyValuePair<string, object>>.GetEnumerator()
         {
-            return this.AsEnumerable().GetEnumerator();
+            return this.ToDictionary().GetEnumerator();
         }
 
         #endregion
@@ -570,7 +565,7 @@ namespace VitorRubio.DynamicHelpers
 
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
-            return this.AsEnumerable().GetEnumerator();
+            return this.ToDictionary().GetEnumerator();
         }
 
         #endregion
@@ -645,7 +640,7 @@ namespace VitorRubio.DynamicHelpers
         private int GetCount()
         {
             return this.GetProperties().Count + _dictionary.Count;
-            //return this.AsEnumerable().Count();
+            //return this.ToDictionary().Count();
         }
 
         #endregion

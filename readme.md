@@ -182,8 +182,8 @@ pelo seu código que eu e mais uns milhares de pessoas copiamos, foi da sua idei
 - [C# How to serialize (JSON, XML) normal properties on a class that inherits from DynamicObject](https://stackoverflow.com/questions/18822121/c-sharp-how-to-serialize-json-xml-normal-properties-on-a-class-that-inherits/18822202#18822202)
 - [Serialization Guide](https://www.newtonsoft.com/json/help/html/SerializationGuide.htm)
 - [Working with the Dynamic Type in C#](https://www.red-gate.com/simple-talk/dotnet/c-programming/working-with-the-dynamic-type-in-c/)
-
-
+- [Dynamic in C# 4.0: Creating Wrappers with DynamicObject](https://docs.microsoft.com/en-us/archive/blogs/csharpfaq/dynamic-in-c-4-0-creating-wrappers-with-dynamicobject)
+- [C# merge dictionary and other tricks](https://softdevpractice.com/blog/c-dictionary-tricks/)
 
 
 
