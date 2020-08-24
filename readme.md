@@ -184,20 +184,25 @@ pelo seu código que eu e mais uns milhares de pessoas copiamos, foi da sua idei
 - [Working with the Dynamic Type in C#](https://www.red-gate.com/simple-talk/dotnet/c-programming/working-with-the-dynamic-type-in-c/)
 - [Dynamic in C# 4.0: Creating Wrappers with DynamicObject](https://docs.microsoft.com/en-us/archive/blogs/csharpfaq/dynamic-in-c-4-0-creating-wrappers-with-dynamicobject)
 - [C# merge dictionary and other tricks](https://softdevpractice.com/blog/c-dictionary-tricks/)
-
-
+- [Walkthrough: Creating and Using Dynamic Objects](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects)
+- [Como o ElasticObject pode ser um wrapper para um dynamic e resolver o Cenário 3](https://stackoverflow.com/questions/36557845/can-one-convert-a-dynamic-object-to-an-expandoobject-c)
+- [Custom Dynamic Behavior using DynamicObject](https://www.codeproject.com/Tips/1273974/Custom-Dynamic-Behavior-using-DynamicObject)
+- [Using DynamicObject to Implement General Proxy Classes](https://www.codeproject.com/Articles/100710/Using-DynamicObject-to-Implement-General-Proxy-Cla)
 
 # Disclaimer do "Pra quê isso?"
-> manja um objeto dynamic ? você pode colocar qualquer coisa na variável dynamic, mas depois só pode 
-> ler / gravar as propriedades que já existem, certo? se vc adicionar uma propriedade que não existe ele dá pau
-> bom pra trabalhar com saídas de métodos quando a saída é uma projeção ou objeto anônimo
+> Manja um objeto dynamic ? você pode colocar qualquer coisa na variável dynamic, mas depois só pode 
+> ler / gravar as propriedades que já existem, certo? 
+> 
+> Se vc adicionar uma propriedade que não existe ele dá pau.  
+> É bom pra trabalhar com saídas de métodos quando a saída é uma projeção ou objeto anônimo (Cenário3)
 > mas você não pode criar uma propriedade do nada igual vc faz no javascript
-> tipo ´obj.Pirlimpimpim = "laranja"´ isso estoura erro no dynamic
+> tipo `obj.Pirlimpimpim = "laranja"` isso estoura erro no dynamic
 > mas tem uma classe especial pra isso, chamada ExpandoObject, que com ele você pode fazer  
-> ´obj.Pirlimpimpim = "laranja"´  sem dar erro. Ele cria a propriedade Pirlimpimpim  com o valor "laranja"   
+> `obj.Pirlimpimpim = "laranja"`  sem dar erro. Ele cria a propriedade Pirlimpimpim  com o valor "laranja"   
 > na hora como se sempre tivesse existido e não dá pau, igual vc faria no javascript, declara a propriedade 
 > na hora q vai usar (internamente ele guarda em um dictionary).
-> só que o objeto ExpandoObject é sealed/final, ele não pode ser herdado, ele não pode ter propriedades 
+> 
+> Só que o objeto ExpandoObject é sealed/final, ele não pode ser herdado, ele não pode ter propriedades 
 > normais declaradas como um objeto normal (estaticamente tipadas como um new Pessoa() da vida)
 > então estou tentando criar uma classe que junta a elasticidade do ExpandoObject com a versatilidade do 
 > dynamic pra ver o mundo pegar fogo.

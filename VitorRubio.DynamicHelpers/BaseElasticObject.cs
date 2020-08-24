@@ -63,51 +63,64 @@ namespace VitorRubio.DynamicHelpers
             return thisKeys.Union(base.GetDynamicMemberNames());
         }
 
-        //
-        // Resumo:
-        //     Provides a System.Dynamic.DynamicMetaObject that dispatches to the dynamic virtual
-        //     methods. The object can be encapsulated inside another System.Dynamic.DynamicMetaObject
-        //     to provide custom behavior for individual actions. This method supports the Dynamic
-        //     Language Runtime infrastructure for language implementers and it is not intended
-        //     to be used directly from your code.
-        //
-        // Parâmetros:
-        //   parameter:
-        //     The expression that represents System.Dynamic.DynamicMetaObject to dispatch to
-        //     the dynamic virtual methods.
-        //
-        // Devoluções:
-        //     An object of the System.Dynamic.DynamicMetaObject type.
+
+        /// <summary>
+        /// 
+        /// Resumo:
+        ///     Provides a System.Dynamic.DynamicMetaObject that dispatches to the dynamic virtual
+        ///     methods. The object can be encapsulated inside another System.Dynamic.DynamicMetaObject
+        ///     to provide custom behavior for individual actions. This method supports the Dynamic
+        ///     Language Runtime infrastructure for language implementers and it is not intended
+        ///     to be used directly from your code.
+        /// 
+        /// Parâmetros:
+        ///   parameter:
+        ///     The expression that represents System.Dynamic.DynamicMetaObject to dispatch to
+        ///     the dynamic virtual methods.
+        /// 
+        /// Devoluções:
+        ///     An object of the System.Dynamic.DynamicMetaObject type.
+        /// 
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public override DynamicMetaObject GetMetaObject(Expression parameter)
         {
             return base.GetMetaObject(parameter);
         }
 
-        //
-        // Resumo:
-        //     Provides implementation for binary operations. Classes derived from the System.Dynamic.DynamicObject
-        //     class can override this method to specify dynamic behavior for operations such
-        //     as addition and multiplication.
-        //
-        // Parâmetros:
-        //   binder:
-        //     Provides information about the binary operation. The binder.Operation property
-        //     returns an System.Linq.Expressions.ExpressionType object. For example, for the
-        //     sum = first + second statement, where first and second are derived from the DynamicObject
-        //     class, binder.Operation returns ExpressionType.Add.
-        //
-        //   arg:
-        //     The right operand for the binary operation. For example, for the sum = first
-        //     + second statement, where first and second are derived from the DynamicObject
-        //     class, arg is equal to second.
-        //
-        //   result:
-        //     The result of the binary operation.
-        //
-        // Devoluções:
-        //     true if the operation is successful; otherwise, false. If this method returns
-        //     false, the run-time binder of the language determines the behavior. (In most
-        //     cases, a language-specific run-time exception is thrown.)
+        /// <summary>
+        /// 
+        ///  Resumo:
+        ///      Provides implementation for binary operations. Classes derived from the System.Dynamic.DynamicObject
+        ///      class can override this method to specify dynamic behavior for operations such
+        ///      as addition and multiplication.
+        /// 
+        ///  Parâmetros:
+        ///    binder:
+        ///      Provides information about the binary operation. The binder.Operation property
+        ///      returns an System.Linq.Expressions.ExpressionType object. For example, for the
+        ///      sum = first + second statement, where first and second are derived from the DynamicObject
+        ///      class, binder.Operation returns ExpressionType.Add.
+        /// 
+        ///    arg:
+        ///      The right operand for the binary operation. For example, for the sum = first
+        ///      + second statement, where first and second are derived from the DynamicObject
+        ///      class, arg is equal to second.
+        /// 
+        ///    result:
+        ///      The result of the binary operation.
+        /// 
+        ///  Devoluções:
+        ///      true if the operation is successful; otherwise, false. If this method returns
+        ///      false, the run-time binder of the language determines the behavior. (In most
+        ///      cases, a language-specific run-time exception is thrown.)
+        /// 
+        /// </summary>
+        /// <param name="binder"></param>
+        /// <param name="arg"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
         public override bool TryBinaryOperation(BinaryOperationBinder binder, object arg, out object result)
         {
             return base.TryBinaryOperation(binder, arg, out result);
